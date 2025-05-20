@@ -5,4 +5,5 @@
 * Init github project
 * Init vite project (react+ typescript)
 * Update packages to latest version
-* Install MUI packages
+* Add MUI packages
+* Add react-router
