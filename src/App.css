@@ -1,0 +1,10 @@
+#root {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  margin: 0 auto;
+  max-width: 100%;
+  width: 100%;
+}
+
