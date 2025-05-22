@@ -1,19 +1,21 @@
-import { Outlet, useLocation, useParams } from 'react-router';
-import { Box } from '@mui/material';
+import { Outlet } from 'react-router';
 
 import { MainMenu } from './components';
 
 export const MainLayout = () => {
-    const params = useParams();
-  console.log( 'MAin layout params:', params);
-  const location = useLocation();
-  console.log('Main layout location:', location);
   return (
-    <Box>
+    <>
       <MainMenu />
-      <main>
+      <main
+        style={{
+          height: '100%', // ??
+          margin: '0 auto',
+          maxWidth: '75rem',
+          padding: '1.5rem',
+        }}
+      >
         <Outlet />
       </main>
-    </Box>
+    </>
   );
 };
