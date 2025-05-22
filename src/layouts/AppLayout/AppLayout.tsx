@@ -1,9 +1,13 @@
 import { Suspense } from 'react';
-import { Box } from '@mui/material';
+import { Box, useMediaQuery } from '@mui/material';
 
 import type { AppLayoutProps } from './AppLayoutProps';
 
+import { AppLayoutNotification } from './components';
+
 export const AppLayout = ({ children }: AppLayoutProps) => {
+  const isViewAllowed = useMediaQuery('(min-width: 44rem)');
+
   return (
     <Suspense 
       fallback={<Box sx={{ backgroundColor: 'transparent' }} />}>
@@ -22,8 +26,16 @@ export const AppLayout = ({ children }: AppLayoutProps) => {
             width: '100%',
           }}
         >
-          {children}
-          
+          {isViewAllowed 
+            ? (
+              <>
+                {children}
+              </>
+            )
+            : (
+              <AppLayoutNotification />
+            )
+          }
         </Box>
       </Box>
     </Suspense>
